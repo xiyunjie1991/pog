@@ -1,5 +1,4 @@
 <template>
-
   <div
     class="login"
     v-bind:style="{backgroundImage:'url(' + bg + ')',
@@ -19,38 +18,19 @@
       }"
     ></div>
     <div class="form">
-      <el-form
-        :model="form"
-        :rules="rules"
-      >
+      <el-form :model="form" :rules="rules">
         <el-form-item prop="name">
-          <el-input
-            v-model="form.name"
-            placeholder="请输入登录名"
-          >
-          </el-input>
+          <el-input v-model="form.name" placeholder="请输入登录名" prefix-icon="el-icon-phone"></el-input>
         </el-form-item>
         <el-form-item>
-          <el-input
-            v-model="form.password"
-            placeholder="请输入密码"
-            show-password
-          ></el-input>
+          <el-input v-model="form.password" placeholder="请输入密码" show-password></el-input>
         </el-form-item>
         <el-form-item>
-          <el-button
-            type="primary"
-            @click="onSubmit"
-          >登陆</el-button>
-          <el-button
-            type="primary"
-            @click="register"
-          >注册</el-button>
+          <el-button type="primary" @click="onSubmit">登陆</el-button>
+          <el-button type="primary" @click="register">注册</el-button>
         </el-form-item>
-
       </el-form>
     </div>
-
   </div>
 </template>
 
@@ -132,8 +112,13 @@ export default {
 
     .el-form /deep/ .el-form-item--mini {
       .el-input__inner {
-        background :transparent ;
-        border: 0 0 0 1 solid red;
+          border:1px #5B788C solid;
+        background: transparent;
+        border-top-style: none;
+        border-left-style: none;
+        border-right-style: none;
+        border-radius :0;
+      
       }
     }
   }
